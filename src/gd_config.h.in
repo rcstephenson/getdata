@@ -1,0 +1,798 @@
+/* src/gd_config.h.in.  Generated from configure.ac by autoheader.  */
+
+/* Define if building universal (internal helper macro) */
+#undef AC_APPLE_UNIVERSAL_BUILD
+
+/* Define to 1 if your processor stores double-precision floats in the old ARM
+   middle-endian format */
+#undef ARM_ENDIAN_DOUBLES
+
+/* Define to the full path to the `bunzip2' binary */
+#undef BUNZIP2
+
+/* Define to the full path to the `bzip2' binary */
+#undef BZIP2
+
+/* Define to 1 if your C++ compiler doesn't accept -c and -o together. */
+#undef CXX_NO_MINUS_C_MINUS_O
+
+/* Define to dummy `main' function (if any) required to link to the Fortran
+   libraries. */
+#undef F77_DUMMY_MAIN
+
+/* Define to a macro mangling the given C identifier (in lower and upper
+   case), which must not contain underscores, for linking with Fortran. */
+#undef F77_FUNC
+
+/* As F77_FUNC, but for C identifiers containing underscores. */
+#undef F77_FUNC_
+
+/* Define to 1 if your Fortran compiler doesn't accept -c and -o together. */
+#undef F77_NO_MINUS_C_MINUS_O
+
+/* Define if F77 and FC dummy `main' functions are identical. */
+#undef FC_DUMMY_MAIN_EQ_F77
+
+/* Define to 1 if your Fortran compiler doesn't accept -c and -o together. */
+#undef FC_NO_MINUS_C_MINUS_O
+
+/* Define to the full path to the `flac' binary */
+#undef FLAC
+
+/* Define to 1 if your processor stores double-precision floats in big-endian
+   order */
+#undef FLOATS_BIGENDIAN
+
+/* The directory separator between path elements */
+#undef GD_DIRSEP
+
+/* Define to 1 if restrict can used on pointer arrays */
+#undef GD_RESTRICT_ARRAY_OK
+
+/* Define to enable debugging messages */
+#undef GETDATA_DEBUG
+
+/* The major version number */
+#undef GETDATA_MAJOR
+
+/* The minor version number */
+#undef GETDATA_MINOR
+
+/* The revision number */
+#undef GETDATA_REVISION
+
+/* Other qualifiers on the version number triplet (if any) */
+#undef GETDATA_VERSION_SUFFIX
+
+/* Define to the full path to the `gunzip' binary */
+#undef GUNZIP
+
+/* Define to the full path to the `gzip' binary */
+#undef GZIP
+
+/* Define to 1 if you have the <asm/unaligned.h> header file. */
+#undef HAVE_ASM_UNALIGNED_H
+
+/* Define to 1 if you have the <Availability.h> header file. */
+#undef HAVE_AVAILABILITY_H
+
+/* Define to 1 if you have the `basename' function. */
+#undef HAVE_BASENAME
+
+/* Define to 1 if you have the <byteswap.h> header file. */
+#undef HAVE_BYTESWAP_H
+
+/* Define to 1 if you have the <bzlib.h> header file. */
+#undef HAVE_BZLIB_H
+
+/* Define to 1 if you have the `cabs' function. */
+#undef HAVE_CABS
+
+/* Define to 1 if you have the <complex.h> header file. */
+#undef HAVE_COMPLEX_H
+
+/* Define to 1 if you have the <crtdefs.h> header file. */
+#undef HAVE_CRTDEFS_H
+
+/* Define to 1 if you have the declaration of `bswap16', and to 0 if you
+   don't. */
+#undef HAVE_DECL_BSWAP16
+
+/* Define to 1 if you have the declaration of `bswap_16', and to 0 if you
+   don't. */
+#undef HAVE_DECL_BSWAP_16
+
+/* Define to 1 if you have the declaration of `get_unaligned', and to 0 if you
+   don't. */
+#undef HAVE_DECL_GET_UNALIGNED
+
+/* Define to 1 if you have the declaration of `isfinite', and to 0 if you
+   don't. */
+#undef HAVE_DECL_ISFINITE
+
+/* Define to 1 if you have the declaration of `OSSwapInt16', and to 0 if you
+   don't. */
+#undef HAVE_DECL_OSSWAPINT16
+
+/* Define to 1 if you have the declaration of `put_unaligned', and to 0 if you
+   don't. */
+#undef HAVE_DECL_PUT_UNALIGNED
+
+/* Define to 1 if you have the declaration of `Py_USING_UNICODE', and to 0 if
+   you don't. */
+#undef HAVE_DECL_PY_USING_UNICODE
+
+/* Define to 1 if you have the declaration of `strerror_r', and to 0 if you
+   don't. */
+#undef HAVE_DECL_STRERROR_R
+
+/* Define to 1 if you have the declaration of `_strtoi64', and to 0 if you
+   don't. */
+#undef HAVE_DECL__STRTOI64
+
+/* Define to 1 if you have the declaration of `_strtoui64', and to 0 if you
+   don't. */
+#undef HAVE_DECL__STRTOUI64
+
+/* Define to 1 if you have the <direct.h> header file. */
+#undef HAVE_DIRECT_H
+
+/* Define to 1 if you have the <dirent.h> header file, and it defines `DIR'.
+   */
+#undef HAVE_DIRENT_H
+
+/* Define to 1 if you have the <dlfcn.h> header file. */
+#undef HAVE_DLFCN_H
+
+/* Define to 1 if you have the `dup2' function. */
+#undef HAVE_DUP2
+
+/* Define to 1 if you have the `fchmod' function. */
+#undef HAVE_FCHMOD
+
+/* Define to 1 if you have the <fcntl.h> header file. */
+#undef HAVE_FCNTL_H
+
+/* Define to 1 if you have the `fdopendir' function. */
+#undef HAVE_FDOPENDIR
+
+/* Define to 1 if you have the <features.h> header file. */
+#undef HAVE_FEATURES_H
+
+/* Define to 1 if you have the <FLAC/all.h> header file. */
+#undef HAVE_FLAC_ALL_H
+
+/* Define to 1 if you have the <float.h> header file. */
+#undef HAVE_FLOAT_H
+
+/* Define to 1 if you have the `fork' function. */
+#undef HAVE_FORK
+
+/* Define to 1 if you have the `fpathconf' function. */
+#undef HAVE_FPATHCONF
+
+/* Define to 1 if you have the `fseeko' function. */
+#undef HAVE_FSEEKO
+
+/* Define to 1 if you have the `fseeko64' function. */
+#undef HAVE_FSEEKO64
+
+/* Define to 1 if you have the `fstat64' function. */
+#undef HAVE_FSTAT64
+
+/* Define to 1 if you have the `fstatat' function. */
+#undef HAVE_FSTATAT
+
+/* Define to 1 if you have the `fstatat64' function. */
+#undef HAVE_FSTATAT64
+
+/* Define to 1 if you have the `fsync' function. */
+#undef HAVE_FSYNC
+
+/* Define to 1 if you have the `ftello' function. */
+#undef HAVE_FTELLO
+
+/* Define to 1 if you have the `ftello64' function. */
+#undef HAVE_FTELLO64
+
+/* Define to 1 if you have the `ftruncate' function. */
+#undef HAVE_FTRUNCATE
+
+/* Define to 1 if you have the `ftruncate64' function. */
+#undef HAVE_FTRUNCATE64
+
+/* Define to 1 if you have the `getcwd' function. */
+#undef HAVE_GETCWD
+
+/* Define to 1 if you have the `getdelim' function. */
+#undef HAVE_GETDELIM
+
+/* Define to 1 if you have the `gmtime_r' function. */
+#undef HAVE_GMTIME_R
+
+/* Define to 1 if you have the `gzseek64' function. */
+#undef HAVE_GZSEEK64
+
+/* Define to 1 if you have the `gztell64' function. */
+#undef HAVE_GZTELL64
+
+/* Define to 1 if you have the <idl_export.h> header file. */
+#undef HAVE_IDL_EXPORT_H
+
+/* Define to 1 if you have the <inttypes.h> header file. */
+#undef HAVE_INTTYPES_H
+
+/* Define to 1 if you have the <io.h> header file. */
+#undef HAVE_IO_H
+
+/* Define to 1 if you have the `isnan' function. */
+#undef HAVE_ISNAN
+
+/* Define to 1 if you have the `kill' function. */
+#undef HAVE_KILL
+
+/* Define to 1 if you have the `bz2' library (-lbz2). */
+#undef HAVE_LIBBZ2
+
+/* Define to 1 if you have the `FLAC' library (-lFLAC). */
+#undef HAVE_LIBFLAC
+
+/* Define to 1 if you have the <libgen.h> header file. */
+#undef HAVE_LIBGEN_H
+
+/* Define to 1 if you have the <libkern/OSByteOrder.h> header file. */
+#undef HAVE_LIBKERN_OSBYTEORDER_H
+
+/* Define to 1 if you have the `lzma' library (-llzma). */
+#undef HAVE_LIBLZMA
+
+/* Define to 1 if you have the `slim' library (-lslim). */
+#undef HAVE_LIBSLIM
+
+/* Define to 1 if you have the `z' library (-lz). */
+#undef HAVE_LIBZ
+
+/* Define to 1 if you have the `zzip' library (-lzzip). */
+#undef HAVE_LIBZZIP
+
+/* Define to 1 if the system has the type 'long long int'. */
+#undef HAVE_LONG_LONG_INT
+
+/* Define to 1 if you have the `lseek64' function. */
+#undef HAVE_LSEEK64
+
+/* Define to 1 if you have the `lstat' function. */
+#undef HAVE_LSTAT
+
+/* Define to 1 if you have the `lstat64' function. */
+#undef HAVE_LSTAT64
+
+/* Define to 1 if you have the <ltdl.h> header file. */
+#undef HAVE_LTDL_H
+
+/* Define to 1 if you have the <lzma.h> header file. */
+#undef HAVE_LZMA_H
+
+/* Define to 1 if you have the <math.h> header file. */
+#undef HAVE_MATH_H
+
+/* Define to 1 if you have the <memory.h> header file. */
+#undef HAVE_MEMORY_H
+
+/* Define to 1 if you have the `nan' function. */
+#undef HAVE_NAN
+
+/* Define to 1 if you have the <ndir.h> header file, and it defines `DIR'. */
+#undef HAVE_NDIR_H
+
+/* Define to 1 if you have the <numpy/arrayobject.h> header file. */
+#undef HAVE_NUMPY_ARRAYOBJECT_H
+
+/* Define to 1 if the system has the type `off64_t'. */
+#undef HAVE_OFF64_T
+
+/* Define to 1 if you have the `openat' function. */
+#undef HAVE_OPENAT
+
+/* Define to 1 if you have the `pathconf' function. */
+#undef HAVE_PATHCONF
+
+/* Define to 1 if you have the `pcre_compile' function. */
+#undef HAVE_PCRE_COMPILE
+
+/* Define to 1 if you have the <pcre.h> header file. */
+#undef HAVE_PCRE_H
+
+/* Define to 1 if you have the `pipe' function. */
+#undef HAVE_PIPE
+
+/* Define to 1 if you have the <pthread.h> header file. */
+#undef HAVE_PTHREAD_H
+
+/* Define to 1 if you have the `PyCapsule_New' function. */
+#undef HAVE_PYCAPSULE_NEW
+
+/* Define to 1 if you have the `PyErr_NewExceptionWithDoc' function. */
+#undef HAVE_PYERR_NEWEXCEPTIONWITHDOC
+
+/* Define to 1 if you have the `readdir_r' function. */
+#undef HAVE_READDIR_R
+
+/* Define to 1 if you have the `readlink' function. */
+#undef HAVE_READLINK
+
+/* Define to 1 if you have the `regcomp' function. */
+#undef HAVE_REGCOMP
+
+/* Define to 1 if you have the <regex.h> header file. */
+#undef HAVE_REGEX_H
+
+/* Define to 1 if you have the `renameat' function. */
+#undef HAVE_RENAMEAT
+
+/* Define to 1 if you have the `setrlimit' function. */
+#undef HAVE_SETRLIMIT
+
+/* Define to 1 if you have the <signal.h> header file. */
+#undef HAVE_SIGNAL_H
+
+/* Define to 1 if you have the `slimdopen' function. */
+#undef HAVE_SLIMDOPEN
+
+/* Define to 1 if you have the `slimdrawsize' function. */
+#undef HAVE_SLIMDRAWSIZE
+
+/* Define to 1 if you have the <slimlib.h> header file. */
+#undef HAVE_SLIMLIB_H
+
+/* Define to 1 if you have the `snprintf' function. */
+#undef HAVE_SNPRINTF
+
+/* Define to 1 if you have the `stat64' function. */
+#undef HAVE_STAT64
+
+/* Define to 1 if you have the <stddef.h> header file. */
+#undef HAVE_STDDEF_H
+
+/* Define to 1 if you have the <stdint.h> header file. */
+#undef HAVE_STDINT_H
+
+/* Define to 1 if you have the <stdlib.h> header file. */
+#undef HAVE_STDLIB_H
+
+/* Define to 1 if you have the `strerror_r' function. */
+#undef HAVE_STRERROR_R
+
+/* Define to 1 if you have the <strings.h> header file. */
+#undef HAVE_STRINGS_H
+
+/* Define to 1 if you have the <string.h> header file. */
+#undef HAVE_STRING_H
+
+/* Define to 1 if you have the `strtoll' function. */
+#undef HAVE_STRTOLL
+
+/* Define to 1 if you have the `strtoq' function. */
+#undef HAVE_STRTOQ
+
+/* Define to 1 if you have the `strtoull' function. */
+#undef HAVE_STRTOULL
+
+/* Define to 1 if you have the `strtouq' function. */
+#undef HAVE_STRTOUQ
+
+/* Define to 1 if the system has the type `struct stat64'. */
+#undef HAVE_STRUCT_STAT64
+
+/* Define to 1 if the system has the type `struct _stat64'. */
+#undef HAVE_STRUCT__STAT64
+
+/* Define to 1 if the system has the type `struct __stat64'. */
+#undef HAVE_STRUCT___STAT64
+
+/* Define to 1 if you have the `symlink' function. */
+#undef HAVE_SYMLINK
+
+/* Define to 1 if you have the <sys/dir.h> header file, and it defines `DIR'.
+   */
+#undef HAVE_SYS_DIR_H
+
+/* Define to 1 if you have the <sys/endian.h> header file. */
+#undef HAVE_SYS_ENDIAN_H
+
+/* Define to 1 if you have the <sys/file.h> header file. */
+#undef HAVE_SYS_FILE_H
+
+/* Define to 1 if you have the <sys/ndir.h> header file, and it defines `DIR'.
+   */
+#undef HAVE_SYS_NDIR_H
+
+/* Define to 1 if you have the <sys/param.h> header file. */
+#undef HAVE_SYS_PARAM_H
+
+/* Define to 1 if you have the <sys/resource.h> header file. */
+#undef HAVE_SYS_RESOURCE_H
+
+/* Define to 1 if you have the <sys/stat.h> header file. */
+#undef HAVE_SYS_STAT_H
+
+/* Define to 1 if you have the <sys/time.h> header file. */
+#undef HAVE_SYS_TIME_H
+
+/* Define to 1 if you have the <sys/types.h> header file. */
+#undef HAVE_SYS_TYPES_H
+
+/* Define to 1 if you have the <sys/wait.h> header file. */
+#undef HAVE_SYS_WAIT_H
+
+/* Define to 1 if you have the <unistd.h> header file. */
+#undef HAVE_UNISTD_H
+
+/* Define to 1 if you have the `unlinkat' function. */
+#undef HAVE_UNLINKAT
+
+/* Define to 1 if the system has the type 'unsigned long long int'. */
+#undef HAVE_UNSIGNED_LONG_LONG_INT
+
+/* Define to 1 if you have the `vfork' function. */
+#undef HAVE_VFORK
+
+/* Define to 1 if you have the <vfork.h> header file. */
+#undef HAVE_VFORK_H
+
+/* Define to 1 if `fork' works. */
+#undef HAVE_WORKING_FORK
+
+/* Define to 1 if `vfork' works. */
+#undef HAVE_WORKING_VFORK
+
+/* Define to 1 if you have the <zlib.h> header file. */
+#undef HAVE_ZLIB_H
+
+/* Define to 1 if you have the <zzip/lib.h> header file. */
+#undef HAVE_ZZIP_LIB_H
+
+/* Define to 1 if you have the `_chsize' function. */
+#undef HAVE__CHSIZE
+
+/* Define to 1 if you have the `_chsize_s' function. */
+#undef HAVE__CHSIZE_S
+
+/* Define to 1 if you have the `_commit' function. */
+#undef HAVE__COMMIT
+
+/* Define to 1 if the system has the type `_Complex double'. */
+#undef HAVE__COMPLEX_DOUBLE
+
+/* Define to 1 if the system has the type `_Complex float'. */
+#undef HAVE__COMPLEX_FLOAT
+
+/* Define to 1 if you have the `_fdopen' function. */
+#undef HAVE__FDOPEN
+
+/* Define to 1 if you have the `_finite' function. */
+#undef HAVE__FINITE
+
+/* Define to 1 if you have the `_fstat' function. */
+#undef HAVE__FSTAT
+
+/* Define to 1 if you have the `_fstat64' function. */
+#undef HAVE__FSTAT64
+
+/* Define to 1 if you have the `_getcwd' function. */
+#undef HAVE__GETCWD
+
+/* Define to 1 if you have the `_isnan' function. */
+#undef HAVE__ISNAN
+
+/* Define to 1 if you have the `_lseeki64' function. */
+#undef HAVE__LSEEKI64
+
+/* Define to 1 if you have the `_mkdir' function. */
+#undef HAVE__MKDIR
+
+/* Define to 1 if you have the `_open' function. */
+#undef HAVE__OPEN
+
+/* Define to 1 if you have the `_read' function. */
+#undef HAVE__READ
+
+/* Define to 1 if you have the `_rmdir' function. */
+#undef HAVE__RMDIR
+
+/* Define to 1 if you have the `_snprintf' function. */
+#undef HAVE__SNPRINTF
+
+/* Define to 1 if you have the `_stat64' function. */
+#undef HAVE__STAT64
+
+/* Define to 1 if you have the `_strtoi64' function. */
+#undef HAVE__STRTOI64
+
+/* Define to 1 if you have the `_strtoui64' function. */
+#undef HAVE__STRTOUI64
+
+/* Define to 1 if you have the `_unlink' function. */
+#undef HAVE__UNLINK
+
+/* Define to 1 if you have the `_write' function. */
+#undef HAVE__WRITE
+
+/* Define to the sub-directory where libtool stores uninstalled libraries. */
+#undef LT_OBJDIR
+
+/* Define to 1 if the `mkdir' function takes only one argument. */
+#undef MKDIR_NO_MODE
+
+/* Define to the full Win32 path to the `sh.exe' binary */
+#undef MSYS_SHELL
+
+/* Define to 1 to disable tests that write large quantities (>1MB) of
+   temporary data. */
+#undef NO_LARGE_TESTS
+
+/* Define to 1 if your C compiler doesn't accept -c and -o together. */
+#undef NO_MINUS_C_MINUS_O
+
+/* Name of package */
+#undef PACKAGE
+
+/* Define to the address where bug reports for this package should be sent. */
+#undef PACKAGE_BUGREPORT
+
+/* Define to the full name of this package. */
+#undef PACKAGE_NAME
+
+/* Define to the full name and version of this package. */
+#undef PACKAGE_STRING
+
+/* Define to the one symbol short name of this package. */
+#undef PACKAGE_TARNAME
+
+/* Define to the home page for this package. */
+#undef PACKAGE_URL
+
+/* Define to the version of this package. */
+#undef PACKAGE_VERSION
+
+/* The size of `int', as computed by sizeof. */
+#undef SIZEOF_INT
+
+/* The size of `long int', as computed by sizeof. */
+#undef SIZEOF_LONG_INT
+
+/* The size of `long long int', as computed by sizeof. */
+#undef SIZEOF_LONG_LONG_INT
+
+/* The size of `off_t', as computed by sizeof. */
+#undef SIZEOF_OFF_T
+
+/* The size of `short int', as computed by sizeof. */
+#undef SIZEOF_SHORT_INT
+
+/* The size of `size_t', as computed by sizeof. */
+#undef SIZEOF_SIZE_T
+
+/* The size of `unsigned int', as computed by sizeof. */
+#undef SIZEOF_UNSIGNED_INT
+
+/* The size of `unsigned long int', as computed by sizeof. */
+#undef SIZEOF_UNSIGNED_LONG_INT
+
+/* The size of `unsigned long long int', as computed by sizeof. */
+#undef SIZEOF_UNSIGNED_LONG_LONG_INT
+
+/* The size of `unsigned short int', as computed by sizeof. */
+#undef SIZEOF_UNSIGNED_SHORT_INT
+
+/* The size of `void *', as computed by sizeof. */
+#undef SIZEOF_VOID_P
+
+/* Define to the full path to the `slimdata' binary */
+#undef SLIMDATA
+
+/* Define to 1 if you have the ANSI C header files. */
+#undef STDC_HEADERS
+
+/* Define to 1 if strerror_r returns char *. */
+#undef STRERROR_R_CHAR_P
+
+/* Define to enable bzip2 tests */
+#undef TEST_BZIP2
+
+/* Define to enable flac tests */
+#undef TEST_FLAC
+
+/* Define to enable gzip tests */
+#undef TEST_GZIP
+
+/* Define to enable lzma tests */
+#undef TEST_LZMA
+
+/* Define to enable slim tests */
+#undef TEST_SLIM
+
+/* Define to enable zzip tests */
+#undef TEST_ZZIP
+
+/* Define to 1 if the platform supports fast unaligned memory access */
+#undef UNALIGNED_ACCESS_OK
+
+/* Define to the full path to the `unslim' binary */
+#undef UNSLIM
+
+/* Define to the full path to the `unzip' binary */
+#undef UNZIP
+
+/* Define to enable bzip2 support */
+#undef USE_BZIP2
+
+/* Define to enable flac support */
+#undef USE_FLAC
+
+/* Define to enable gzip support */
+#undef USE_GZIP
+
+/* Define to enable lzma support */
+#undef USE_LZMA
+
+/* Define if building with modules */
+#undef USE_MODULES
+
+/* Define if you have a POSIX compliant thread library */
+#undef USE_PTHREAD
+
+/* Define to enable slim support */
+#undef USE_SLIM
+
+/* Enable extensions on AIX 3, Interix.  */
+#ifndef _ALL_SOURCE
+# undef _ALL_SOURCE
+#endif
+/* Enable GNU extensions on systems that have them.  */
+#ifndef _GNU_SOURCE
+# undef _GNU_SOURCE
+#endif
+/* Enable threading extensions on Solaris.  */
+#ifndef _POSIX_PTHREAD_SEMANTICS
+# undef _POSIX_PTHREAD_SEMANTICS
+#endif
+/* Enable extensions on HP NonStop.  */
+#ifndef _TANDEM_SOURCE
+# undef _TANDEM_SOURCE
+#endif
+/* Enable general extensions on Solaris.  */
+#ifndef __EXTENSIONS__
+# undef __EXTENSIONS__
+#endif
+
+
+/* Define to enable zzip support */
+#undef USE_ZZIP
+
+/* Define to enable zzslim support */
+#undef USE_ZZSLIM
+
+/* Version number of package */
+#undef VERSION
+
+/* Define WORDS_BIGENDIAN to 1 if your processor stores words with the most
+   significant byte first (like Motorola and SPARC, unlike Intel). */
+#if defined AC_APPLE_UNIVERSAL_BUILD
+# if defined __BIG_ENDIAN__
+#  define WORDS_BIGENDIAN 1
+# endif
+#else
+# ifndef WORDS_BIGENDIAN
+#  undef WORDS_BIGENDIAN
+# endif
+#endif
+
+/* Define to the full path to the `xz' binary */
+#undef XZ
+
+/* Define to the full path to the `zip' binary */
+#undef ZIP
+
+/* Define to 1 if on MINIX. */
+#undef _MINIX
+
+/* Define to 2 if the system does not provide POSIX.1 features except with
+   this defined. */
+#undef _POSIX_1_SOURCE
+
+/* Define to 1 if you need to in order for `stat' and other things to work. */
+#undef _POSIX_SOURCE
+
+/* Define for Solaris 2.5.1 so the uint32_t typedef from <sys/synch.h>,
+   <pthread.h>, or <semaphore.h> is not used. If the typedef were allowed, the
+   #define below would cause a syntax error. */
+#undef _UINT32_T
+
+/* Define for Solaris 2.5.1 so the uint64_t typedef from <sys/synch.h>,
+   <pthread.h>, or <semaphore.h> is not used. If the typedef were allowed, the
+   #define below would cause a syntax error. */
+#undef _UINT64_T
+
+/* Define for Solaris 2.5.1 so the uint8_t typedef from <sys/synch.h>,
+   <pthread.h>, or <semaphore.h> is not used. If the typedef were allowed, the
+   #define below would cause a syntax error. */
+#undef _UINT8_T
+
+/* If compiling aginst the MSVCRT, define to 0x601 */
+#undef __MSVCRT_VERSION__
+
+/* Define to empty if `const' does not conform to ANSI C. */
+#undef const
+
+/* Define to `__inline__' or `__inline' if that's what the C compiler
+   calls it, or to nothing if 'inline' is not supported under any name.  */
+#ifndef __cplusplus
+#undef inline
+#endif
+
+/* Define to the type of a signed integer type of width exactly 16 bits if
+   such a type exists and the standard includes do not define it. */
+#undef int16_t
+
+/* Define to the type of a signed integer type of width exactly 32 bits if
+   such a type exists and the standard includes do not define it. */
+#undef int32_t
+
+/* Define to the type of a signed integer type of width exactly 64 bits if
+   such a type exists and the standard includes do not define it. */
+#undef int64_t
+
+/* Define to the type of a signed integer type of width exactly 8 bits if such
+   a type exists and the standard includes do not define it. */
+#undef int8_t
+
+/* Define to `int' if <sys/types.h> does not define. */
+#undef mode_t
+
+/* Define to `long int' if <sys/types.h> does not define. */
+#undef off_t
+
+/* Define to `int' if <sys/types.h> does not define. */
+#undef pid_t
+
+/* Define to the equivalent of the C99 'restrict' keyword, or to
+   nothing if this is not supported.  Do not define if restrict is
+   supported directly.  */
+#undef restrict
+/* Work around a bug in Sun C++: it does not support _Restrict or
+   __restrict__, even though the corresponding Sun C compiler ends up with
+   "#define restrict _Restrict" or "#define restrict __restrict__" in the
+   previous line.  Perhaps some future version of Sun C++ will work with
+   restrict; if so, hopefully it defines __RESTRICT like Sun C does.  */
+#if defined __SUNPRO_CC && !defined __RESTRICT
+# define _Restrict
+# define __restrict__
+#endif
+
+/* Define to `unsigned int' if <sys/types.h> does not define. */
+#undef size_t
+
+/* Define to `int' if <sys/types.h> does not define. */
+#undef ssize_t
+
+/* Define to the type of an unsigned integer type of width exactly 16 bits if
+   such a type exists and the standard includes do not define it. */
+#undef uint16_t
+
+/* Define to the type of an unsigned integer type of width exactly 32 bits if
+   such a type exists and the standard includes do not define it. */
+#undef uint32_t
+
+/* Define to the type of an unsigned integer type of width exactly 64 bits if
+   such a type exists and the standard includes do not define it. */
+#undef uint64_t
+
+/* Define to the type of an unsigned integer type of width exactly 8 bits if
+   such a type exists and the standard includes do not define it. */
+#undef uint8_t
+
+/* Define as `fork' if `vfork' does not work. */
+#undef vfork
+
+#include "gd_extra_config.h"

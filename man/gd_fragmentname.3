@@ -1,0 +1,162 @@
+.\" header.tmac.  GetData manual macros.
+.\"
+.\" Copyright (C) 2016 D. V. Wiebe
+.\"
+.\""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+.\"
+.\" This file is part of the GetData project.
+.\"
+.\" Permission is granted to copy, distribute and/or modify this document
+.\" under the terms of the GNU Free Documentation License, Version 1.2 or
+.\" any later version published by the Free Software Foundation; with no
+.\" Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+.\" Texts.  A copy of the license is included in the `COPYING.DOC' file
+.\" as part of this distribution.
+
+.\" Format a function name with optional trailer: func_name()trailer
+.de FN \" func_name [trailer]
+.nh
+.BR \\$1 ()\\$2
+.hy
+..
+
+.\" Format a reference to section 3 of the manual: name(3)trailer
+.de F3 \" func_name [trailer]
+.nh
+.BR \\$1 (3)\\$2
+.hy
+..
+
+.\" Format the header of a list of definitons
+.de DD \" name alt...
+.ie "\\$2"" \{ \
+.TP 8
+.PD
+.B \\$1 \}
+.el \{ \
+.PP
+.B \\$1
+.PD 0
+.DD \\$2 \\$3 \}
+..
+
+.\" Start a code block: Note: groff defines an undocumented .SC for
+.\" Bell Labs man legacy reasons.
+.de SC
+.fam C
+.na
+.nh
+..
+
+.\" End a code block
+.de EC
+.hy
+.ad
+.fam
+..
+
+.\" Format a structure pointer member: struct->member\fRtrailer
+.de SPM \" struct member trailer
+.nh
+.ie "\\$3"" .IB \\$1 ->\: \\$2
+.el .IB \\$1 ->\: \\$2\fR\\$3
+.hy
+..
+
+.\" Format a function argument
+.de ARG \" name trailer
+.nh
+.ie "\\$2"" .I \\$1
+.el .IR \\$1 \\$2
+.hy
+..
+
+.\" Hyphenation exceptions
+.hw sarray carray lincom linterp
+.\" gd_fragmentname.3.  The gd_fragmentname man page.
+.\"
+.\" Copyright (C) 2008, 2010, 2016 D.V. Wiebe
+.\"
+.\""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+.\"
+.\" This file is part of the GetData project.
+.\"
+.\" Permission is granted to copy, distribute and/or modify this document
+.\" under the terms of the GNU Free Documentation License, Version 1.2 or
+.\" any later version published by the Free Software Foundation; with no
+.\" Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+.\" Texts.  A copy of the license is included in the `COPYING.DOC' file
+.\" as part of this distribution.
+.\"
+.TH gd_fragmentname 3 "25 December 2016" "Version 0.10.0" "GETDATA"
+
+.SH NAME
+gd_fragmentname \(em retrieve a Dirfile format specification fragment name
+
+.SH SYNOPSIS
+.SC
+.B #include <getdata.h>
+.HP
+.BI "const char* gd_fragmentname(const DIRFILE *" dirfile ", int " index );
+.EC
+
+.SH DESCRIPTION
+The
+.FN gd_fragmentname
+function queries a dirfile(5) database specified by
+.ARG dirfile
+and returns the filename of the format specification fragment indexed by the
+non-negative
+.ARG index .
+
+The 
+.ARG dirfile
+argument must point to a valid DIRFILE object previously created by a call to
+.F3 gd_open .
+
+The fragment with
+.ARG index
+equal to zero is always the primary fragment for the database (the file called 
+.B format
+in the root dirfile directory).  The largest valid value of
+.ARG index
+is one less than the total number of fragments, which may be obtained from a
+call to
+.F3 gd_nfragments .
+
+.SH RETURN VALUE
+Upon successful completion,
+.FN gd_fragmentname
+returns a pointer to a read-only character string containing the file name of
+the specified fragment.
+
+On error, this function returns NULL and stores a negative-valued error code in
+the
+.B DIRFILE
+object which may be retrieved by a subsequent call to
+.F3 gd_error .
+Possible error codes are:
+.DD GD_E_BAD_DIRFILE
+The supplied dirfile was invalid.
+.DD GD_E_BAD_INDEX
+The supplied index was out of range.
+.PP
+A descriptive error string for the error may be obtained by calling
+.F3 gd_error_string .
+
+.SH HISTORY
+The
+.FN get_fragmentname
+function appeared in GetData-0.4.0.
+
+In GetData-0.7.0 this function was renamed to
+.FN gd_fragmentname .
+
+.SH SEE ALSO
+dirfile(5),
+.F3 gd_error ,
+.F3 gd_error_string ,
+.F3 gd_include ,
+.F3 gd_nfragments ,
+.F3 gd_open ,
+.F3 gd_parent_fragment

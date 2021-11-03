@@ -1,0 +1,173 @@
+# Copyright (C) 2011-2013, 2017 D. V. Wiebe
+#
+##########################################################################
+#
+# This file is part of the GetData project.
+#
+# GetData is free software; you can redistribute it and/or modify it under
+# the terms of the GNU Lesser General Public License as published by the
+# Free Software Foundation; either version 2.1 of the License, or (at your
+# option) any later version.
+#
+# GetData is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public
+# License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with GetData; if not, write to the Free Software Foundation, Inc.,
+
+TYPEMAP
+# basic C types
+const char ** T_CONST_AVPV
+_Complex double T_COMPLEX
+unsigned long int T_UV
+
+# GetData types
+struct gdp_dirfile_t * T_GDP_DIRFILE
+DIRFILE * T_DIRFILE
+gd_entry_t T_ENTRY
+gd_entype_t T_UV
+gd_off64_t T_IV
+gd_int64_t T_IV
+gd_triplet_t T_TRIPLET
+gd_type_t T_IV
+gd_windop_t T_IV
+
+# GetData Perl pseudotypes
+gdp_complex_in T_COMPLEXIN
+gdp_complex_undef T_COMPLEX_UNDEF
+gdp_char * T_PV_NULL
+gdp_ffff_t T_IV_FFFF
+gdp_int T_IV_ZERO
+gdp_numbits_t T_IV_ZERO
+gdp_int64_t T_IV_ZERO
+gdp_uint_t T_UV_ZERO
+gdp_type_t T_IV_ZERO
+gdp_complex T_COMPLEX_ZERO
+gdp_pentry_t T_PENTRY
+
+
+INPUT
+T_GDP_DIRFILE
+  if (sv_isa($arg, \"${Package}::Dirfile\"))
+    $var = INT2PTR(struct gdp_dirfile_t*, SvIV((SV*)SvRV($arg)));
+  else
+    croak(\"%s::${func_name}() - Invalid dirfile object\", gdp_package);
+T_DIRFILE
+  {
+    struct gdp_dirfile_t *gdp_dirfile;
+    if (sv_isa($arg, \"${Package}::Dirfile\")) {
+      gdp_dirfile = INT2PTR(struct gdp_dirfile_t*, SvIV((SV*)SvRV($arg)));
+      $var = gdp_dirfile->D;
+      if ($var == NULL)
+        $var = gdp_invalid;
+    } else
+      croak(\"%s::${func_name}() - Invalid dirfile object\", gdp_package);
+  }
+T_COMPLEXIN
+  if (SvROK($arg) && SvTYPE(SvRV($arg)) == SVt_PVAV) {
+    AV *av = (AV*)SvRV($arg);
+    I32 i, len = av_len(av);
+
+    $var = ($type)safemalloc(2 * sizeof(double) * (1 + len));
+    for (i = 0; i <= len; ++i) {
+      SV **sv = av_fetch(av, i, 0);
+      if (sv == NULL) {
+        safefree($var);
+        croak(\"%s::${func_name}() - Expected array of complex numbers\",
+            gdp_package);
+      }
+      gdp_convert_cmp(gd_cap_(${var}, i), *sv, NULL, gdp_package,
+          \"${func_name}\");
+    }
+  } else {
+    $var = NULL;
+    croak(\"%s::${func_name}() - Expected array of complex numbers\",
+      gdp_package);
+  }
+T_COMPLEX_UNDEF
+  if ($arg == undef)
+    $var = NULL;
+  else if (SvROK($arg) && SvTYPE(SvRV($arg)) == SVt_PVAV) {
+    AV *av = (AV*)SvRV($arg);
+    I32 i, len = av_len(av);
+
+    $var = ($type)safemalloc(2 * sizeof(double) * (1 + len));
+    for (i = 0; i <= len; ++i) {
+      SV **sv = av_fetch(av, i, 0);
+      if (sv == NULL) {
+        safefree($var);
+        croak(\"%s::${func_name}() - Expected array of complex numbers\",
+            gdp_package);
+      }
+      gdp_convert_cmp(gd_cap_(${var}, i), *sv, NULL, gdp_package,
+          \"${func_name}\");
+    }
+  } else {
+    $var = NULL;
+    croak(\"%s::${func_name}() - Expected array of complex numbers\",
+      gdp_package);
+  }
+T_CONST_AVPV
+  { $var = gdp_convert_const_avpv($arg, NULL, gdp_package, \"${func_name}\"); }
+T_COMPLEX
+  { gdp_convert_cmp(gd_csp_($var), $arg, NULL, gdp_package, \"${func_name}\"); }
+T_ENTRY
+  gdp_to_entry(&$var, $arg, NULL, gdp_package, \"${func_name}\");
+T_PENTRY
+  {
+    gd_entry_t old_E;
+    if (gd_entry(dirfile, field_code, &old_E)) {
+      dreturnvoid();
+      XSRETURN_UNDEF;
+    }
+    gd_free_entry_strings(&old_E);
+    gdp_to_entry(&$var, $arg, &old_E, gdp_package, \"${func_name}\");
+  }
+T_IV_FFFF
+  if ($arg == undef)
+    $var = ($type)-1;
+  else
+    $var = ($type)SvIV($arg);
+T_IV_ZERO
+  if ($arg == undef)
+    $var = ($type)0;
+  else
+    $var = ($type)SvIV($arg);
+T_UV_ZERO
+  if ($arg == undef)
+    $var = ($type)0;
+  else
+    $var = ($type)SvUV($arg);
+T_PV_NULL
+  if ($arg == undef)
+    $var = NULL;
+  else
+    $var = SvPV_nolen($arg);
+T_COMPLEX_ZERO
+  if ($arg == undef)
+    gd_rs2cs_($var, 0);
+  else
+    gdp_convert_cmp(gd_csp_($var), $arg, NULL, gdp_package, \"${func_name}\");
+T_TRIPLET
+  { switch (windop) {
+    case GD_WINDOP_EQ:
+    case GD_WINDOP_NE:
+      $var.i = (int64_t)SvIV($arg);
+      break;
+    case GD_WINDOP_SET:
+    case GD_WINDOP_CLR:
+      $var.u = (uint64_t)SvUV($arg);
+      break;
+    default:
+      $var.r = SvNV($arg);
+      break;
+  }}
+  
+
+ 
+
+OUTPUT
+T_GDP_DIRFILE
+  sv_setref_uv($arg, \"${Package}::Dirfile\", PTR2UV($var));

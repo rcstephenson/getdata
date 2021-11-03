@@ -1,0 +1,178 @@
+.\" header.tmac.  GetData manual macros.
+.\"
+.\" Copyright (C) 2016 D. V. Wiebe
+.\"
+.\""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+.\"
+.\" This file is part of the GetData project.
+.\"
+.\" Permission is granted to copy, distribute and/or modify this document
+.\" under the terms of the GNU Free Documentation License, Version 1.2 or
+.\" any later version published by the Free Software Foundation; with no
+.\" Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+.\" Texts.  A copy of the license is included in the `COPYING.DOC' file
+.\" as part of this distribution.
+
+.\" Format a function name with optional trailer: func_name()trailer
+.de FN \" func_name [trailer]
+.nh
+.BR \\$1 ()\\$2
+.hy
+..
+
+.\" Format a reference to section 3 of the manual: name(3)trailer
+.de F3 \" func_name [trailer]
+.nh
+.BR \\$1 (3)\\$2
+.hy
+..
+
+.\" Format the header of a list of definitons
+.de DD \" name alt...
+.ie "\\$2"" \{ \
+.TP 8
+.PD
+.B \\$1 \}
+.el \{ \
+.PP
+.B \\$1
+.PD 0
+.DD \\$2 \\$3 \}
+..
+
+.\" Start a code block: Note: groff defines an undocumented .SC for
+.\" Bell Labs man legacy reasons.
+.de SC
+.fam C
+.na
+.nh
+..
+
+.\" End a code block
+.de EC
+.hy
+.ad
+.fam
+..
+
+.\" Format a structure pointer member: struct->member\fRtrailer
+.de SPM \" struct member trailer
+.nh
+.ie "\\$3"" .IB \\$1 ->\: \\$2
+.el .IB \\$1 ->\: \\$2\fR\\$3
+.hy
+..
+
+.\" Format a function argument
+.de ARG \" name trailer
+.nh
+.ie "\\$2"" .I \\$1
+.el .IR \\$1 \\$2
+.hy
+..
+
+.\" Hyphenation exceptions
+.hw sarray carray lincom linterp
+.\" gd_entry_type.3.  The gd_entry_type man page.
+.\"
+.\" Copyright (C) 2008, 2009, 2010, 2011, 2012, 2016 D. V. Wiebe
+.\"
+.\""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+.\"
+.\" This file is part of the GetData project.
+.\"
+.\" Permission is granted to copy, distribute and/or modify this document
+.\" under the terms of the GNU Free Documentation License, Version 1.2 or
+.\" any later version published by the Free Software Foundation; with no
+.\" Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+.\" Texts.  A copy of the license is included in the `COPYING.DOC' file
+.\" as part of this distribution.
+.\"
+.TH gd_entry_type 3 "25 December 2016" "Version 0.10.0" "GETDATA"
+
+.SH NAME
+gd_entry_type \(em retrieve the type of a Dirfile field
+
+.SH SYNOPSIS
+.SC
+.B #include <getdata.h>
+.HP
+.BI "gd_entype_t gd_entry_type(const DIRFILE *" dirfile ", const char"
+.BI * field_code );
+.EC
+
+.SH DESCRIPTION
+The
+.FN gd_entry_type
+function queries a dirfile(5) database specified by
+.ARG dirfile
+and returns the field type of the field specified by
+.ARG field_code .
+If
+.ARG field_code
+contains a valid representation suffix, it will be ignored.
+
+The
+.B gd_entype_t
+type is an enumerated type which may take any of the following values:
+.IP
+.SC
+.BR GD_BIT_ENTRY ,
+.BR GD_CARRAY_ENTRY ,
+.BR GD_CONST_ENTRY ,
+.BR GD_DIVIDE_ENTRY ,
+.BR GD_INDEX_ENTRY ,
+.BR GD_INDIR_ENTRY ,
+.BR GD_LINCOM_ENTRY ,
+.BR GD_LINTERP_ENTRY ,
+.BR GD_MPLEX_ENTRY ,
+.BR GD_MULTIPLY_ENTRY ,
+.BR GD_PHASE_ENTRY ,
+.BR GD_POLYNOM_ENTRY ,
+.BR GD_RAW_ENTRY ,
+.BR GD_RECIP_ENTRY ,
+.BR GD_SARRAY_ENTRY ,
+.BR GD_SBIT_ENTRY ,
+.BR GD_SINDIR_ENTRY ,
+.BR GD_STRING_ENTRY ,
+.BR GD_WINDOW_ENTRY .
+.EC
+
+.SH RETURN VALUE
+Upon successful completion,
+.FN gd_entry_type
+returns the field type of the specified field.  On error,
+.FN gd_entry_type
+returns
+.B GD_NO_ENTRY
+and stores a negative-valued error code in the
+.B DIRFILE
+object which may be retrieved by a subsequent call to
+.F3 gd_error .
+Possible error codes are:
+.DD GD_E_BAD_DIRFILE
+The supplied dirfile was invalid.
+.DD GD_E_BAD_CODE
+The field specified by
+.ARG field_code
+was not found in the database.
+.PP
+A descriptive error string for the error may be obtained by calling
+.F3 gd_error_string .
+
+.SH HISTORY
+The
+.FN get_entry_type
+function appeared in GetData-0.5.0.
+
+In GetData-0.7.0, this function was renamed to
+.FN gd_entry_type .
+
+.SH SEE ALSO
+.F3 gd_entry ,
+.F3 gd_error ,
+.F3 gd_error_string ,
+.F3 gd_fragmentname ,
+.F3 gd_open ,
+.F3 gd_parent_fragment ,
+dirfile(5)

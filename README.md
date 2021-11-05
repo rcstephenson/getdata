@@ -130,6 +130,7 @@ will display a brief help message summarising available options.
 ---
 **Note** 
 > I run:
+>
 > $ ./configure --disable-fortran --disable-fortran95 --disable-idl --disable-matlab --disable-perl --disable-php
 ---
 

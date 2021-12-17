@@ -128,10 +128,24 @@ insufficient, before building it by passing options to ./configure.  Running
 will display a brief help message summarising available options.
 
 ---
-**Note** 
-> I run:
->
+## **Note** 
+
+I run:
+
 > $ ./configure --disable-fortran --disable-fortran95 --disable-idl --disable-matlab --disable-perl --disable-php
+
+If after installing the python file doesn't work (test currently fails). Hack is to run the setup.py in bindings/python then export the shared object file for Ubuntu:
+
+> $ cd bindings/python
+> 
+> $ python setup.py build
+> 
+> $ python setup.py install
+> 
+> $ cd ../../
+> 
+> $ export LD_LIBRARY_PATH=/usr/local/lib/
+> 
 ---
 
 PREREQUISITES
